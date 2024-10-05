@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Cart from '../cart/Cart.jsx'
 
-  const ProductList = () => {
+  const ProductList = ({cart, setCart}) => {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const [cart, setCart] = useState([])
+  
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -46,7 +46,7 @@ import Cart from '../cart/Cart.jsx'
             <p><strong>Price:</strong> ${product.price}</p>
             <p><strong>Rating:</strong> {product.rating} / 5</p>
             <div className='btn-container'>
-            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+            <button className='add-to-cart-btn' onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           </div>
         ))}

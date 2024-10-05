@@ -47,3 +47,27 @@
 h1 {
   text-align: center;
 }
+
+.cart {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px; /* Set a maximum width for the cart */
+  margin: 20px auto; /* Center the cart */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.cart h2 {
+  margin-bottom: 10px;
+  text-align: center; /* Center the title */
+}
+
+.cart ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.cart li {
+  padding: 8px; /* Add some padding to each item */
+  border-bottom: 1px solid #ddd; /* Add a border between items */
+}
