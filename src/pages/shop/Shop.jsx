@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import Cart from '../cart/Cart.jsx'
 
-export const ProductList = () => {
+  const ProductList = () => {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -17,6 +19,16 @@ export const ProductList = () => {
       setLoading(false)
     })
   }, [])
+ 
+
+  const handleAddToCart = (product) => {
+    setCart ((prevCart) => {
+      const updatedCart = [...prevCart, product]
+      console.log("Updated Cart:", updatedCart)
+      return updatedCart
+    })
+  }
+
   if(loading){
     return <p>Loading products...</p>
   }
@@ -34,11 +46,12 @@ export const ProductList = () => {
             <p><strong>Price:</strong> ${product.price}</p>
             <p><strong>Rating:</strong> {product.rating} / 5</p>
             <div className='btn-container'>
-            <button className='add-to-cart-btn'>Add to Cart</button>
+            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           </div>
         ))}
       </div>
+      <Cart cart = {cart} />
     </div>
   )
 }
