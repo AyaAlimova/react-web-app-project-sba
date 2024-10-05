@@ -32,9 +32,10 @@ export const ProductList = () => {
             <img src={product.thumbnail} alt={product.title} />
             <h2>{product.title}</h2>
             <p><strong>Price:</strong> ${product.price}</p>
-            <p><strong>Category:</strong> {product.category}</p>
-            <p><strong>Stock:</strong> {product.stock}</p>
             <p><strong>Rating:</strong> {product.rating} / 5</p>
+            <div className='btn-container'>
+            <button className='add-to-cart-btn'>Add to Cart</button>
+            </div>
           </div>
         ))}
       </div>
