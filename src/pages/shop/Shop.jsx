@@ -24,11 +24,21 @@ export const ProductList = () => {
   return (
     <div className='product-list'>
       <div className='shopTitle'>
-        <h1>PedroTech</h1>
+        <h1>All Products</h1>
       </div>
-      <div className="products">
-        
+      <div className="product-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={product.thumbnail} alt={product.title} />
+            <h2>{product.title}</h2>
+            <p><strong>Price:</strong> ${product.price}</p>
+            <p><strong>Category:</strong> {product.category}</p>
+            <p><strong>Stock:</strong> {product.stock}</p>
+            <p><strong>Rating:</strong> {product.rating} / 5</p>
+          </div>
+        ))}
       </div>
     </div>
   )
 }
+export default ProductList
