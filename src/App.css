@@ -43,7 +43,9 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
+.add-to-cart-btn:hover {
+  background-color: blue;
+}
 h1 {
   text-align: center;
 }
